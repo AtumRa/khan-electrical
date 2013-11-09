@@ -1,5 +1,5 @@
   <!DOCTYPE html>
-  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+  <html data-require="math">
       <head>
           <title>Parallel Resistors</title>
           <script src="../khan-exercise.js"></script>
@@ -14,26 +14,26 @@
               </div>
 
               <div class="problems">
-                  <div id="2 resistors in parallel">
+                  <div id="2 resistors in parallel" data-calculator="">
                       <p class="problem"><img src="images/parallelResistors2dc.png" alt="Parallel Resistors" width="384" height="150"></p>
-                      <p class="question">Given R1 = <var>R1</var> ohms and R2 = <var>R2</var> ohms: </p><p> What is the total resistance of this circuit? <var>(R1*R2)/(R1 + R2)</var></p>
+                      <p class="question">Given R1 = <var>R1</var> ohms and R2 = <var>R2</var> ohms: </p><p> What is the total resistance of this circuit?</p>
                       <p class="solution" data-inexact data-max-error="0.1" data-type="decimal"><var>(R1*R2)/(R1 + R2)</var></p>
                   </div>
-<!--                   <div id="3 resistors in parallel">
+                  <div id="3 resistors in parallel" data-calculator="">
                       <p class="problem"><img src="images/parallelResistors3dc.png" alt="Parallel Resistors" width="384" height="150"></p>
                       <p class="question">Given R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: </p><p> What is the total resistance of this circuit?</p>
-                      <p class="solution" data-inexact data-max-error="0.1" data-type="decimal">1.00><var>1/ ((1/R1) + (1/R2) + (1/R3))</var></p>
+                      <p class="solution" data-inexact data-max-error="0.1" data-type="decimal"><var>1/ ((1/R1) + (1/R2) + (1/R3))</var></p>
                   </div>
-                  <div id="4 resistors in parallel">
+                  <div id="4 resistors in parallel" data-calculator="">
                       <p class="problem"><img src="images/parallelResistors4dc.png" alt="Parallel Resistors" width="384" height="150"></p>
                        <p class="question">Given R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, and R4 = <var>R4</var> ohms: </p><p> What is the total resistance of this circuit?</p>
-                      <p class="solution" data-inexact data-max-error="0.1" data-type="decimal">1.00><var>1/ ((1/R1) + (1/R2) + (1/R3) + (1/R4))</var></p>
-                  </div> -->
+                      <p class="solution" data-inexact data-max-error="0.1" data-type="decimal"><var>1/ ((1/R1) + (1/R2) + (1/R3) + (1/R4))</var></p>
+                  </div>
               </div>
 
               <div class="hints">
-                  <p>Don't forget resistors in series just add up.</p>
-                  <p>The total resistance is the sum of all the individual resistances. <code class="hint_blue">{ R }_{ t }={ R }_{ 1 }+{ R }_{ 2 }+{ R }_{ 3 }....{ R }_{ n }</code></p>
+                  <p>Don't forget resistors in parallel are added as the reciproal of the sum of the reciprocals.</p>
+                  <p>The total resistance is the reciproal of the sum of the reciprocals. <code class="hint_blue">{ R }_{ t }=\quad \cfrac { 1 }{ \frac { 1 }{ { R }_{ 1 } } +\frac { 1 }{ { R }_{ 2 } } +\frac { 1 }{ { R }_{ n } }  }</code></p>
               </div>
           </div>
       </body>
