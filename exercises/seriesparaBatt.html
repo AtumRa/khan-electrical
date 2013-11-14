@@ -1,0 +1,44 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Batteries in Series and Parallel</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars" >
+                  <var id="V1">(rand(4)+1)*6</var>
+                  <var id="V2">V1</var>
+                  <var id="I1">(rand(4)+1)</var>
+                  <var id="I2">I1</var>
+              </div>
+
+              <div class="problems">
+                  <div id="2 batteries in parallel voltage">
+                      <p class="problem"><img src="images/parallelbatteries2dc.png" alt="Series Resistors"></p>
+                      <p class="question">Given the voltage of battery V1 = <var>V1</var> volts and the voltage of battery V2 = <var>V2</var> volts: <br><br> What is the total voltage across R1?</p>
+                      <p class="solution" data-forms="integer"><var>V1</var></p>
+                  </div>
+                  <div id="2 batteries in series voltage">
+                      <p class="problem"><img src="images/seriesbatteries2dc.png" alt="Series batteries"></p>
+                      <p class="question">Given the voltage of battery V1 = <var>V1</var> volts and the voltage of battery V2 = <var>V2</var> volts: <br><br> What is the total voltage across R1?</p>
+                      <p class="solution" data-forms="integer"><var>V1 + V2</var></p>
+                  </div>
+                  <div id="2 batteries in parallel current">
+                      <p class="problem"><img src="images/parallelbatteries2dc.png" alt="Series batteries" ></p>
+                       <p class="question">Given the current of battery V1 = <var>I1</var> amps, and the current of battery V2 = <var>I2</var> amps: <br><br> What is the total current through R1?</p>
+                      <p class="solution" data-forms="integer"><var>I1 + I2</var></p>
+                  </div>
+                  <div id="2 batteries in series current">
+                      <p class="problem"><img src="images/seriesbatteries2dc.png" alt="Series batteries" ></p>
+                       <p class="question">Given the current of battery V1 = <var>I1</var> amps, and the current of battery V2 = <var>I2</var> amps: <br><br> What is the total current through R1?</p>
+                      <p class="solution" data-forms="integer"><var>I1</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+                  <p>Don't forget batteries in parallel add current and batteries in series add voltage.</p>
+              </div>
+          </div>
+      </body>
+  </html>
