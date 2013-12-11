@@ -8,7 +8,7 @@
           <div class="exercise">
 
               <div class="problems">
-                  <div id="2 batteries in parallel voltage">
+                  <div id="2batteriesParallelVoltage">
                     <div class="vars">
                       <var id="V1">(rand(4)+1)*6</var>
                       <var id="V2">V1</var>
@@ -20,7 +20,7 @@
                       <p>Don't forget batteries in parallel with the same polarity add current and batteries in series with additive polarities add voltage.</p>
                     </div>
                   </div>
-                  <div id="2 batteries in series voltage">
+                  <div id="2batteriesSeriesVoltage">
                     <div class="vars">
                       <var id="V1">(rand(4)+1)*6</var>
                       <var id="V2">V1</var>
@@ -32,7 +32,7 @@
                       <p>Don't forget batteries in parallel with the same polarity add current and batteries in series with additive polarities add voltage.</p>
                     </div>
                   </div>
-                  <div id="2 batteries in parallel current">
+                  <div id="2batteriesParallelCurrent">
                     <div class="vars">
                       <var id="I1">(rand(4)+1)</var>
                       <var id="I2">I1</var>
@@ -44,7 +44,7 @@
                       <p>Don't forget batteries in parallel with the same polarity add current and batteries in series with additive polarities add voltage.</p>
                     </div>
                   </div>
-                  <div id="2 batteries in series current">
+                  <div id="2batteriesSeriesCurrent">
                     <div class="vars">
                       <var id="I1">(rand(4)+1)</var>
                       <var id="I2">I1</var>
@@ -56,7 +56,7 @@
                       <p>Don't forget batteries in parallel with the same polarity add current and batteries in series with additive polarities add voltage.</p>
                     </div>
                   </div>
-                  <div id="2 batteries series subtractive">
+                  <div id="2batteriesSeriesSubtractive">
                     <div class="vars" data-ensure="V1 != V2">
                         <var id="V1">(rand(4)+1)*6</var>
                         <var id="V2">(rand(4)+1)*6</var>
@@ -65,8 +65,8 @@
                       <p class="question">Given the voltage of battery V1 = <var>V1</var> volts and the voltage of battery V2 = <var>V2</var> volts: <br><br> What is the total voltage across R1?</p>
                       <p class="solution" data-forms="integer"><var>Math.abs(V1-V2)</var></p>
                     <div class="hints">
-                        <p>When dealing with batteries in series, with subtractive polarities, subtract the voltage of the battery of one polarity from the battery of the other polarity.</p>
-                        <p>In other words, the answer is the absolute value of the difference of the two batteries voltages.</p>
+                        <H4>When dealing with batteries in series, with subtractive polarities, subtract the voltage of the battery of one polarity from the battery of the other polarity.</H4>
+                        <H4>In other words, the answer is the absolute value of the difference of the two batteries voltages.</H4>
                     </div>
                   </div>
               </div>

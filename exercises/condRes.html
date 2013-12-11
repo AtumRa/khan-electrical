@@ -1,41 +1,40 @@
   <!DOCTYPE html>
   <html data-require="math graphie graphie-helpers-arithmetic word-problems">
       <head>
-          <title>Conductor Properties</title>
+          <title>Conductor Resistance</title>
           <script src="../khan-exercise.js"></script>
       </head>
       <body>
           <div class="exercise">
-              <div class="vars">
-                  <!-- <var id="R1">(rand(39)+1)*25</var> -->
+              <div class="vars">                  
                   <var id="K">10.4</var>
                   <var id="L">(rand(19)+1)*50</var>
-                  <!-- <var id="A">(rand(9)+1)*10000</var> -->
-                  <var id="cmArray">[4107, 6530, 8234, 10383, 13092, 16509, 20818, 26251, 33101, 41740, 52633, 66369, 83690, 105531, 133072, 167800, 211592, 250000, 300000, 350000, 400000, 500000, 600000, 750000]</var>
-                  <var id="awgArray">['#14', '#12', '#10', '#8', '#6', '#4', '#2', '#1', '1/0', '2/0', '3/0', '4/0']</var>
-                  <!-- <var id="A">shuffle([10, 100])</var> -->
-                  <var id="index">Math.floor(Math.random() * cmArray.length)</var>
-                  <var id="A">cmArray[index]</var>
-                  <var id="size">Math.floor(Math.random() * awgArray.length)</var>
+                  <var id="lgCmArray">[250000, 300000, 350000, 400000, 500000, 600000, 750000]</var>
+                  <var id="index">Math.floor(Math.random() * lgCmArray.length)</var>
+                  <var id="A">lgCmArray[index]</var>
+                  <var id="smCmArray">[4107, 6530, 10383, 13092, 16509, 26251, 41740, 52633, 66369, 83690, 105531, 133072, 167800, 211592]</var>
+                  <var id="awgArray">['#14', '#12', '#10', '#8', '#6', '#4', '#3', '#2', '#1', '1/0', '2/0', '3/0', '4/0']</var>
+                  <var id="size">Math.floor(Math.random() * smCmArray.length)</var>
                   <var id="awg">awgArray[size]</var>
-                  <var id="awgCM">cmArray[size]</var>
+                  <var id="awgCM">smCmArray[size]</var>
+                  <var id="RtCM">(K*L)/A</var>
+                  <var id="RtAWG">(K*L)/awgCM</var>
               </div>
 
             <div class="problems">
-              <div id="Large Conductor Resistance">
+              <div id="LargeConductorResistance">
                   <p class="problem"></p>
                   <p class="question">If the length of a copper conductor is <var>L</var> feet and is <var>A</var> circular mils in area: <br><br> What is the total resistance of this conductor in ohms?</p>
                   <p class="solution" data-inexact data-max-error=".005" data-forms="decimal"><var>(K*L)/A</var></p>
               </div>
-              <div id="Small Conductor Resistance">
+              <div id="SmallConductorResistance">
                   <p class="problem"></p>
                   <p class="question">If the length of a <var>awg</var> gauge copper conductor is <var>L</var> feet: <br><br> What is the total resistance of this conductor in ohms?</p>
                   <p class="solution" data-inexact data-max-error=".01" data-forms="decimal"><var>(K*L)/awgCM</var></p>
               </div>
             </div>
               <div class="hints">
-                  <p>The answer is <var>(K*L)/A</var></p> or
-                  <p>The answer is <var>(K*L)/awgCM</var></p>
+                   <H4>The answer for CM sized wire has to be within .005 ohms, and the answer for AWG sized wire has to be within .01 ohms</H4>
                   <H4>
                     The K factor for copper is 10.4 ohms/cm/ft according to the textbook.</H4>
                     <H4>

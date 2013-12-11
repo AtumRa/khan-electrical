@@ -1,0 +1,39 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Ohm's Law</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+                  <var id="R1">(rand(19)+1)*50</var>
+                  <var id="V1">(rand(9)+1)*3</var>
+                  <var id="I1">V1 / R1</var>
+                  
+              </div>
+
+              <div class="problems">
+                  <div id="ohmsLawCurrent">
+                      <p class="problem"><img src="images/seriesResistorDC.png" alt="Series Resistors"></p>
+                      <p class="question">Given R1 = <var>R1</var> ohms and V1 = <var>V1</var> volts: <br><br> What is the total current of this circuit?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>V1 / R1</var></p>
+                  </div>
+                  <div id="ohmsLawVoltage">
+                      <p class="problem"><img src="images/seriesResistorDC.png" alt="Series Resistors"></p>
+                      <p class="question">Given R1 = <var>R1</var> ohms and I1 = <var>I1</var> amps: <br><br> What is the total voltage of this circuit?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>I1*R1</var></p>
+                  </div>
+                  <div id="ohmsLawResistance">
+                      <p class="problem"><img src="images/seriesResistorDC.png" alt="Series Resistors"></p>
+                      <p class="question">Given V1 = <var>V1</var> volts and I1 = <var>I1</var> amps: <br><br> What is the total resistance of this circuit?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>V1/I1</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">                  
+                  <H4>Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></H4>
+              </div>
+          </div>
+      </body>
+  </html>
