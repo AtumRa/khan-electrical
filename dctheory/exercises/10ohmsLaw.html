@@ -1,0 +1,55 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Ohm's Law</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+                  <var id="R1">(rand(19)+1)*50</var>
+                  <var id="E1">(rand(9)+1)*6</var>
+                  <var id="I1">(E1 / R1).toFixed(6)</var>
+                  <var id="Pt">E1 * I1</var> 
+                  
+              </div>
+
+              <div class="problems">
+                  <div id="ohmsLawCurrent">
+                      <p class="problem"><img src="images/seriesResistorDC.png" alt="Series Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms and E1 = <var>E1</var> volts: <br><br> What is the total current of this circuit accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>E1 / R1</var></p>
+                      <div class="hints">  
+                        <h4>Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                        <h4>Rewrite the Ohm's Law formula to solve for current.<br><br><code class="hint_blue">I\quad =\quad \cfrac { E }{ R } </code></h4>
+                      </div>
+                  </div>
+                  <div id="ohmsLawVoltage">
+                      <p class="problem"><img src="images/seriesResistorDC.png" alt="Series Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms and I1 = <var>I1</var> amps: <br><br> What is the total voltage of this circuit accurate to within .005 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>I1*R1</var></p>
+                      <div class="hints">  
+                        <h4>Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                      </div>
+                  </div>
+                  <div id="ohmsLawResistance">
+                      <p class="problem"><img src="images/seriesResistorDC.png" alt="Series Resistors"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts and I1 = <var>I1</var> amps: <br><br> What is the total resistance of this circuit accurate to within .005 ohms?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>R1</var></p>
+                      <div class="hints">  
+                        <h4>Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                        <h4>Rewrite the Ohm's Law formula to solve for resistance.<code class="hint_blue">R\quad =\quad \cfrac { E }{ I } </code></h4>
+                      </div>
+                  </div>
+                  <div id="ohmsLawPower">
+                      <p class="problem"><img src="images/seriesResistorDC.png" alt="Series Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms and E1 = <var>E1</var> volts: <br><br> What is the total power of this circuit accurate to within .005 watts?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>Pt</var></p>
+                      <div class="hints">  
+                        <h4>Watt's Law (Ohm's Law for Power) states that the Power (in watts) is equal to the product of the current (in amps) and the voltage (in volts). <br><br><code class="hint_blue">P\quad =\quad I\cdot E</code></h4>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </body>
+  </html>

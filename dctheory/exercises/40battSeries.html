@@ -1,0 +1,51 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Batteries in Series</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+
+              <div class="problems">
+                  <div id="2batteriesSeriesVoltage">
+                    <div class="vars">
+                      <var id="E1">(rand(4)+1)*6</var>
+                      <var id="E2">E1</var>
+                    </div>
+                      <p class="problem"><img src="images/seriesbatteries2dc.png" alt="Series batteries"></p>
+                      <p class="question">Given: the voltage of battery E1 = <var>E1</var> volts and the voltage of battery E2 = <var>E2</var> volts: <br><br> What is the total voltage across R1?</p>
+                      <p class="solution" data-forms="integer"><var>E1 + E2</var></p>
+                    <div class="hints">
+                      <p>Don't forget batteries in parallel with the same polarity add current and batteries in series with additive polarities add voltage.</p>
+                    </div>
+                  </div>
+                  <div id="2batteriesSeriesCurrent">
+                    <div class="vars">
+                      <var id="I1">(rand(4)+1)</var>
+                      <var id="I2">I1</var>
+                    </div>
+                      <p class="problem"><img src="images/seriesbatteries2dc.png" alt="Series batteries" ></p>
+                       <p class="question">Given: the current of battery E1 = <var>I1</var> amps, and the current of battery E2 = <var>I2</var> amps: <br><br> What is the total current through R1?</p>
+                      <p class="solution" data-forms="integer"><var>I1</var></p>
+                    <div class="hints">
+                      <p>Don't forget batteries in parallel with the same polarity add current and batteries in series with additive polarities add voltage.</p>
+                    </div>
+                  </div>
+                  <div id="2batteriesSeriesSubtractive">
+                    <div class="vars" data-ensure="E1 != E2">
+                        <var id="E1">(rand(4)+1)*6</var>
+                        <var id="E2">(rand(4)+1)*6</var>
+                    </div>
+                      <p class="problem"><img src="images/seriesbatteriessub2dc.png" alt="Series batteries"></p>
+                      <p class="question">Given: the voltage of battery E1 = <var>E1</var> volts and the voltage of battery E2 = <var>E2</var> volts: <br><br> What is the total voltage across R1?</p>
+                      <p class="solution" data-forms="integer"><var>Math.abs(E1-E2)</var></p>
+                    <div class="hints">
+                        <H4>When dealing with batteries in series, with subtractive polarities, subtract the voltage of the battery of one polarity from the battery of the other polarity.</H4>
+                        <H4>In other words, the answer is the absolute value of the difference of the two batteries voltages.</H4>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </body>
+  </html>

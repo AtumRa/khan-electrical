@@ -10,63 +10,68 @@
                   <var id="R1">(rand(19)+1)*50</var>
                   <var id="R2">(rand(29)+1)*50</var>
                   <var id="Rt" >R1 + R2</var>
-                  <var id="V1">(rand(19)+1)*10</var>
-                  <var id="VR1">V1 * (R1/Rt)</var>
-                  <var id="VR2">V1 * (R2/Rt)</var>
-                  <var id="I1">(V1 / Rt).toFixed(6)</var>
+                  <var id="E1">(rand(19)+1)*10</var>
+                  <var id="ER1">E1 * (R1/Rt)</var>
+                  <var id="ER2">E1 * (R2/Rt)</var>
+                  <var id="I1">(E1 / Rt).toFixed(6)</var>
+                  <var id="Pt">E1 * I1</var>
                   
               </div>
 
               <div class="problems">
-                  <div id="ohmsLaw2SeriesCurrent">
+                  <div id="ohmsLaw2Current">
                       <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
-                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and V1 = <var>V1</var> volts: <br><br> What is the total current of this circuit accurate to within .005 amps?</p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and E1 = <var>E1</var> volts: <br><br> What is the total current of this circuit accurate to within .005 amps?</p>
                       <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>I1</var></p>
                       <div class="hints">                 
                         <h4>You must first find the total resistance and then divide the total voltage by the total resistance.<br><br><code class="hint_blue">I\quad =\quad \cfrac { E }{ R } </code></h4>                      
                       </div>
                   </div>
-                  <div id="ohmsLaw2SeriesVoltageDivider1">
+                  <div id="ohmsLaw2VoltageDivider1">
                       <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
-                      <p class="question">Given: I1 = <var>I1</var> amps, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and V1 = <var>V1</var> volts: <br><br> What is the voltage drop on R1 accurate to within .005 volts?</p>
-                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>VR1</var></p>
+                      <p class="question">Given: I1 = <var>I1</var> amps, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and E1 = <var>E1</var> volts: <br><br> What is the voltage drop on R1 accurate to within .005 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>ER1</var></p>
                       <div class="hints">
                         <h4>The first way to solve this problem is to divide the voltage proportionately across the resistors.</h4>
                         <h4>The second way to solve this problem is that Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). This also applies to each device in the circuit.<br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
                       </div>
                   </div>
-                  <div id="ohmsLaw2SeriesVoltageDivider2">
+                  <div id="ohmsLaw2VoltageDivider2">
                       <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
-                      <p class="question">Given: I1 = <var>I1</var> amps, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and V1 = <var>V1</var> volts: <br><br> What is the voltage drop on R2 accurate to within .005 volts?</p>
-                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>VR2</var></p>
+                      <p class="question">Given: I1 = <var>I1</var> amps, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and E1 = <var>E1</var> volts: <br><br> What is the voltage drop on R2 accurate to within .005 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>ER2</var></p>
                       <div class="hints">
                         <h4>The first way to solve this problem is to divide the voltage proportionately across the resistors.</h4>
                         <h4>The second way to solve this problem is that Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). This also applies to each device in the circuit.<br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
                       </div>
                   </div>
-                  <div id="ohmsLaw2SeriesTotalVoltage">
+                  <div id="ohmsLaw2TotalVoltage">
                       <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
-                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and I1 = <var>I1</var> amps: <br><br> What is the total voltage of this circuit rounded to the nearest whole number?</p>
-                      <p class="solution" data-forms="integer"><var>V1</var></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and I1 = <var>I1</var> amps: <br><br> What is the total voltage of this circuit accurate to within .005 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>E1</var></p>
                       <div class="hints">                  
                         <h4>Remember to add up the resistances in series to find the total resistance.</h4>
                         <h4>Then multiply the total resistance by the total current.</h4>
                         <h4>Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms).<br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>                      
                       </div>
                   </div>
-                  <div id="ohmsLaw2SeriesResistance">
+                  <div id="ohmsLaw2Resistance">
                       <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
-                      <p class="question">Given: V1 = <var>V1</var> volts and I1 = <var>I1</var> amps: <br><br> What is the total resistance of this circuit rounded to the nearest whole number?</p>
-                      <p class="solution" data-forms="integer"><var>Rt</var></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts and I1 = <var>I1</var> amps: <br><br> What is the total resistance of this circuit accurate to within .005 ohms?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>Rt</var></p>
                       <div class="hints">                  
-                        <h4>If you rearrange Ohm's law to solve for resistance then total voltage divided by the total current will give you total resistance.</h4>
+                        <h4>Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                        <h4>Rewrite the Ohm's Law formula to solve for resistance.<code class="hint_blue">R\quad =\quad \cfrac { E }{ I } </code></h4>
                       </div>
                   </div>
-              </div>
-
-              <div class="hints">                  
-                  <H4>For the total voltage and total resistance answers you have to round off to an integer.</H4>
-                  
+                  <div id="ohmsLaw2Power">
+                      <p class="problem"><img src="images/ohmslawdc2res.png" alt="Series Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and E1 = <var>E1</var> volts: <br><br> What is the total power of this circuit accurate to within .005 watts?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>Pt</var></p>
+                      <div class="hints">  
+                        <H4>Watt's Law (Ohm's Law for Power) states that the Power (in watts) is equal to the product of the current (in amps) and the voltage (in volts). <br><br><code class="hint_blue">P\quad =\quad I\cdot E</code></H4>
+                      </div>
+                  </div>
               </div>
           </div>
       </body>
