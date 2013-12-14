@@ -1,0 +1,73 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Ohm's Law with Resistors in Series</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars" data-ensure="R1 != R2">
+                  <var id="R1">(rand(19)+1)*50</var>
+                  <var id="R2">(rand(29)+1)*50</var>
+                  <var id="Rt" >R1 + R2</var>
+                  <var id="V1">(rand(19)+1)*10</var>
+                  <var id="VR1">V1 * (R1/Rt)</var>
+                  <var id="VR2">V1 * (R2/Rt)</var>
+                  <var id="I1">(V1 / Rt).toFixed(6)</var>
+                  
+              </div>
+
+              <div class="problems">
+                  <div id="ohmsLaw2SeriesCurrent">
+                      <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and V1 = <var>V1</var> volts: <br><br> What is the total current of this circuit accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>I1</var></p>
+                      <div class="hints">                 
+                        <h4>You must first find the total resistance and then divide the total voltage by the total resistance.<br><br><code class="hint_blue">I\quad =\quad \cfrac { E }{ R } </code></h4>                      
+                      </div>
+                  </div>
+                  <div id="ohmsLaw2SeriesVoltageDivider1">
+                      <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
+                      <p class="question">Given: I1 = <var>I1</var> amps, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and V1 = <var>V1</var> volts: <br><br> What is the voltage drop on R1 accurate to within .005 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>VR1</var></p>
+                      <div class="hints">
+                        <h4>The first way to solve this problem is to divide the voltage proportionately across the resistors.</h4>
+                        <h4>The second way to solve this problem is that Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). This also applies to each device in the circuit.<br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                      </div>
+                  </div>
+                  <div id="ohmsLaw2SeriesVoltageDivider2">
+                      <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
+                      <p class="question">Given: I1 = <var>I1</var> amps, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and V1 = <var>V1</var> volts: <br><br> What is the voltage drop on R2 accurate to within .005 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>VR2</var></p>
+                      <div class="hints">
+                        <h4>The first way to solve this problem is to divide the voltage proportionately across the resistors.</h4>
+                        <h4>The second way to solve this problem is that Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms). This also applies to each device in the circuit.<br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                      </div>
+                  </div>
+                  <div id="ohmsLaw2SeriesTotalVoltage">
+                      <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms and I1 = <var>I1</var> amps: <br><br> What is the total voltage of this circuit rounded to the nearest whole number?</p>
+                      <p class="solution" data-forms="integer"><var>V1</var></p>
+                      <div class="hints">                  
+                        <h4>Remember to add up the resistances in series to find the total resistance.</h4>
+                        <h4>Then multiply the total resistance by the total current.</h4>
+                        <h4>Ohm's Law states that the voltage (in volts) is equal to the product of the current (in amps) and the resistance (in ohms).<br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>                      
+                      </div>
+                  </div>
+                  <div id="ohmsLaw2SeriesResistance">
+                      <p class="problem"><img src="images/ohmslawdc2res.png" alt="Ohm's Law Series Resistors"></p>
+                      <p class="question">Given: V1 = <var>V1</var> volts and I1 = <var>I1</var> amps: <br><br> What is the total resistance of this circuit rounded to the nearest whole number?</p>
+                      <p class="solution" data-forms="integer"><var>Rt</var></p>
+                      <div class="hints">                  
+                        <h4>If you rearrange Ohm's law to solve for resistance then total voltage divided by the total current will give you total resistance.</h4>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="hints">                  
+                  <H4>For the total voltage and total resistance answers you have to round off to an integer.</H4>
+                  
+              </div>
+          </div>
+      </body>
+  </html>
