@@ -1,0 +1,67 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Superposition Circuits</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars" data-ensure="R1 != R2 != R3" data-ensure="E1 != E2">
+                  <var id="E1">(rand(14)+5)*10</var>
+                  <var id="E2">(rand(14)+5)*10</var>
+                  <var id="R1">(rand(39)+1)*25</var>
+                  <var id="R2">(rand(39)+1)*25</var>
+                  <var id="R3">(rand(39)+1)*25</var>
+                  <var id="Rt1" >(R1+(1/(1/R2+1/R3)))</var>
+                  <var id="Rt2" >(R2+(1/(1/R1+1/R3)))</var>
+                  <var id="IR1E1">(E1 / Rt1)</var>
+                  <var id="IR2E1">(IR1E1 * (1/(1/R2 + 1/R3))/R2)</var>
+                  <var id="IR3E1">(IR1E1 * (1/(1/R2 + 1/R3))/R3)</var>
+                  <var id="IR2E2">(E2 / Rt2)</var>
+                  <var id="IR1E2">(IR2E2 * (1/(1/R1 + 1/R3))/R1)</var>
+                  <var id="IR3E2">(IR2E2 * (1/(1/R1 + 1/R3))/R3)</var>
+                  <var id="IR1ta">(IR1E1 + IR1E2)</var>
+                  <var id="IR2ta">(IR2E1 + IR2E2)</var>
+                  <var id="IR3ta">(IR3E1 + IR3E2)</var>
+                  <var id="IR1to">Math.abs(IR1E1 - IR1E2)</var>
+                  <var id="IR2to">Math.abs(IR2E1 - IR2E2)</var>
+                  <var id="IR3to">Math.abs(IR3E1 - IR3E2)</var>
+              </div>
+
+              <div class="problems">
+                  <div id="superpositionAddR1">
+                      <p class="problem"><img src="images/superpositionAdd.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R1 in this circuit accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR1ta</var></p>
+                  </div>
+                  <div id="superpositionAddR2">
+                      <p class="problem"><img src="images/superpositionAdd.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R2 in this circuit accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR2ta</var></p>
+                  </div>
+                  <div id="superpositionAddR3">
+                      <p class="problem"><img src="images/superpositionAdd.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R3 in this circuit accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR3ta</var></p>
+                  </div>
+                  <div id="superpositionOppR1">
+                      <p class="problem"><img src="images/superpositionOpp.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R1 in this circuit accurate to within .005 amps?<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR1to</var></p>
+                  </div>
+                  <div id="superpositionOppR3">
+                      <p class="problem"><img src="images/superpositionOpp.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R2 in this circuit accurate to within .005 amps?<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR2to</var></p>
+                  </div>
+                  <div id="superpositionOppR3">
+                      <p class="problem"><img src="images/superpositionOpp.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R3 in this circuit accurate to within .005 amps?<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR3to</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+                  <p>All values are absolute. There are no negative numbers in answers.</p>
+                  <p>Short each power supply one at a time and calculate the entire circuit. Then add the currents that are in the same direction and subtract the currents that are in opposite directions.</p>
+              </div>
+          </div>
+      </body>
+  </html>

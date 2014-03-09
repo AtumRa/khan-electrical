@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Voltage Drop</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">                  
+                  <var id="lgCmArray">[250000, 300000, 350000, 400000, 500000, 600000, 750000]</var>
+                  <var id="index">Math.floor(Math.random() * lgCmArray.length)</var>
+                  <var id="A">lgCmArray[index]</var>
+                  <var id="smCmArray">[4107, 6530, 10383, 13092, 16509, 26251, 41740, 52633, 66369, 83690, 105531, 133072, 167800, 211592]</var>
+                  <var id="size">Math.floor(Math.random() * smCmArray.length)</var>
+                  <var id="awgCM">smCmArray[size]</var>
+                  <var id="K">10.4</var>
+                  <var id="L">(rand(19)+1)*30</var>
+                  <var id="M">(rand(19)+1)*10</var>
+                  <var id="I">(rand(19)+1)*10</var>
+                  <!-- <var id="J">awgCM/((rand(1)+1)*150)</var> -->
+                  <var id="J">(rand(19)+3)*5</var>
+                  <var id="Evda">(K*I*2*L)/A</var>
+                  <var id="Evdb">(K*J*2*M)/awgCM</var>
+              </div>
+
+            <div class="problems">
+              <div id="VoltageDropLarge">
+                  <p class="problem"></p>
+                  <p class="question">If the distance to a load is <var>L</var> feet, the current drawn is <var>I</var> amps, and you are using copper wire that is <var>A</var> circular mils in area: <br><br> What is the total voltage drop on the conductors accurate to .5 volts?</p>
+                  <p class="solution" data-inexact data-max-error=".5" data-forms="decimal"><var>Evda</var></p>
+              </div>
+              <div id="VoltageDropSmall">
+                  <p class="problem"></p>
+                  <p class="question">If the distance to a load is <var>M</var> feet, the current drawn is <var>J</var> amps, and you are using copper wire that is <var>awgCM</var> circular mils in area: <br><br> What is the total voltage drop on the conductors accurate to .05 volts?</p>
+                  <p class="solution" data-inexact data-max-error=".05" data-forms="decimal"><var>Evdb</var></p>
+              </div>
+            </div>
+              <div class="hints">
+                   <H4>Don't forget to double the distance to the load for the length of the conductors.</H4>
+                  <H4>
+                    The K factor for copper is 10.4 ohms/cm/ft according to the textbook.</H4>
+                    <H4>
+                    Lookup the circular mil area of AWG conductors in the tables of the NEC.</H4>                
+                  <H4>The voltage drop formula is: <br><br><code class="hint_blue" >{ E }_{ vd }=\quad \cfrac { K\cdot I\cdot 2\cdot L }{ A }  </code></H4>
+                                
+              </div>
+          </div>
+      </body>
+  </html>

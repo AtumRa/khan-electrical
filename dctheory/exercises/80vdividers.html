@@ -1,0 +1,86 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Voltage Divider Circuits</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars" data-ensure="R1 != R2 != R3 != R4">
+                  <var id="R1">(rand(39)+1)*25</var>
+                  <var id="R2">(rand(39)+1)*25</var>
+                  <var id="R3">(rand(39)+1)*25</var>
+                  <var id="R4">(rand(39)+1)*25</var>
+                  <var id="Rt2" >R1 + R2</var>
+                  <var id="Rt3" >R1 + R2 + R3</var>
+                  <var id="Rt4" >R1 + R2 + R3 + R4</var>
+                  <var id="E1">(rand(19)+1)*10</var>
+                  <var id="I2">(E1 / Rt2).toFixed(6)</var>
+                  <var id="I3">(E1 / Rt3).toFixed(6)</var>
+                  <var id="I4">(E1 / Rt4).toFixed(6)</var>
+                  <var id="ER12">I2 * R1</var>
+                  <var id="ER13">I3 * R1</var>
+                  <var id="ER14">I4 * R1</var>
+                  <var id="ER22">I2 * R2</var>
+                  <var id="ER23">I3 * R2</var>
+                  <var id="ER24">I4 * R2</var>
+                  <var id="ER32">I2 * R3</var>
+                  <var id="ER33">I3 * R3</var>
+                  <var id="ER34">I4 * R3</var>
+                  <var id="ER42">I2 * R4</var>
+                  <var id="ER43">I3 * R4</var>
+                  <var id="ER44">I4 * R4</var>
+              </div>
+
+              <div class="problems">
+                  <div id="2resistorsinseriesR1">
+                      <p class="problem"><img src="images/seriesResistors2dc.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms and R2 = <var>R2</var> ohms: <br><br> What is the voltage drop on R1 in this circuit accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER12</var></p>
+                  </div>
+                  <div id="2resistorsinseriesR2">
+                      <p class="problem"><img src="images/seriesResistors2dc.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms and R2 = <var>R2</var> ohms: <br><br> What is the voltage drop on R2 in this circuit accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER22</var></p>
+                  </div>
+                  <div id="3resistorsinseriesR1">
+                      <p class="problem"><img src="images/seriesResistors3dc.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the voltage drop on R1 in this circuit accurate to within .05 volts?<p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER13</var></p>
+                  </div>
+                  <div id="3resistorsinseriesR2">
+                      <p class="problem"><img src="images/seriesResistors3dc.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the voltage drop on R2 in this circuit accurate to within .05 volts?<p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER23</var></p>
+                  </div>
+                  <div id="3resistorsinseriesR3">
+                      <p class="problem"><img src="images/seriesResistors3dc.png" alt="Series Resistance"></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the voltage drop on R3 in this circuit accurate to within .05 volts?<p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER33</var></p>
+                  </div>
+                  <div id="4resistorsinseriesR1">
+                      <p class="problem"><img src="images/seriesResistors4dc.png" alt="Series Resistance" ></p>
+                       <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, and R4 = <var>R4</var> ohms: <br><br> What is the voltage drop on R1 in this circuit accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER14</var></p>
+                  </div>
+                  <div id="4resistorsinseriesR2">
+                      <p class="problem"><img src="images/seriesResistors4dc.png" alt="Series Resistance" ></p>
+                       <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, and R4 = <var>R4</var> ohms: <br><br> What is the voltage drop on R2 in this circuit accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER24</var></p>
+                  </div>
+                  <div id="4resistorsinseriesR3">
+                      <p class="problem"><img src="images/seriesResistors4dc.png" alt="Series Resistance" ></p>
+                       <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, and R4 = <var>R4</var> ohms: <br><br> What is the voltage drop on R3 in this circuit accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER34</var></p>
+                  </div>
+                  <div id="4resistorsinseriesR4">
+                      <p class="problem"><img src="images/seriesResistors4dc.png" alt="Series Resistance" ></p>
+                       <p class="question">Given: E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, and R4 = <var>R4</var> ohms: <br><br> What is the voltage drop on R4 in this circuit accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>ER44</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+                  <p>Voltage dropped on resistors in a series circuit is directly proportional to their value.</p>
+                  <p>The voltage drop on any resistor is equal to the current through that resistor times its ohmic value.</p><code class="hint_blue">{ { E }_{ Rn } }=I\cdot { R }_{ n }</code>
+              </div>
+          </div>
+      </body>
+  </html>
