@@ -1,7 +1,7 @@
   <!DOCTYPE html>
   <html data-require="math graphie graphie-helpers-arithmetic word-problems">
       <head>
-          <title>Complex Resistors</title>
+          <title>Complex Circuits</title>
           <script src="../khan-exercise.js"></script>
       </head>
       <body>
@@ -13,19 +13,23 @@
                   <var id="R4">(rand(39)+1)*25</var>
                   <var id="Rt" >(R1 + R2 + ((R3*R4)/(R3+R4))).toFixed(6)</var>
                   <var id="E1">(rand(19)+1)*10</var>
+                  <var id="Pt">E1 * It</var> 
                   <var id="It">(E1 / Rt).toFixed(6)</var>
                   <var id="VR1">R1 * It</var>
                   <var id="VR2">R2 * It</var>
                   <var id="VR3">(E1 - (R1 * It) - (R2 * It)).toFixed(6)</var>
                   <var id="VR4">VR3</var>
-                  <var id="Pt">E1 * It</var>                    
+                  <var id="IR1">(VR1/R1).toFixed(6)</var> 
+                  <var id="IR2">(VR2/R2).toFixed(6)</var>
+                  <var id="IR3">(VR3/R3).toFixed(6)</var>
+                  <var id="IR4">(VR4/R4).toFixed(6)</var>
               </div>
 
               <div class="problems">
                   <div id="complexresistance">
                       <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
-                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms and R4 = <var>R4</var> ohms: <br><br> What is the total resistance of this circuit accurate to within .005 ohms?</p>
-                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>Rt</var></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms and R4 = <var>R4</var> ohms: <br><br> What is the total resistance of this circuit accurate to within .05 ohms?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>Rt</var></p>
                     <div class="hints">
                       <h4>Find a pair of resistors that can be combined without affecting the rest of the circuit.</h4>
                       <h4>In this case the parallel resistors can be combined first.</h4>
@@ -41,16 +45,16 @@
                   </div>
                   <div id="complexpower">
                       <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
-                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the total power of this circuit accurate to within .005 watts?</p>
-                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>Pt</var></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the total power of this circuit accurate to within .05 watts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>Pt</var></p>
                     <div class="hints">
                       <h4>Find the total resistance and divide it into the total voltage to find the total current and then multiply the total current by the total voltage.</h4>
                     </div>
                   </div>
                   <div id="complexvoltageR1">
                       <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
-                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the voltage drop on R1 accurate to within .005 volts?</p>
-                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>VR1</var></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the voltage drop on R1 accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>VR1</var></p>
                     <div class="hints">
                       <h4>Remember Ohm's Law works for each individual item in the circuit. So the voltage drop on R1 is <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
                       <h4>Find the total resistance and divide it into the total voltage to get total current. Then multiply that by R1.</h4>
@@ -58,11 +62,61 @@
                   </div>
                   <div id="complexvoltageR2">
                       <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
-                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the voltage drop on R2 accurate to within .005 volts?</p>
-                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>VR2</var></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the voltage drop on R2 accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>VR2</var></p>
                     <div class="hints">
                       <h4>Remember Ohm's Law works for each individual item in the circuit. So the voltage drop on R2 is <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
                       <h4>Find the total resistance and divide it into the total voltage to get total current. Then multiply that by R2.</h4>
+                    </div>
+                  </div>
+                  <div id="complexvoltageR3">
+                      <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the voltage drop on R3 accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>VR3</var></p>
+                    <div class="hints">
+                      <h4>Remember Ohm's Law works for each individual item in the circuit. So the voltage drop on R3 is <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                      <h4>Subtract the voltage drops on R1 and R2 from the source. What is left will be dropped on R3 and R4.</h4>
+                    </div>
+                  </div>
+                  <div id="complexvoltageR4">
+                      <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the voltage drop on R4 accurate to within .05 volts?</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-type="decimal"><var>VR4</var></p>
+                    <div class="hints">
+                      <h4>Remember Ohm's Law works for each individual item in the circuit. So the voltage drop on R4 is <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                      <h4>Subtract the voltage drops on R1 and R2 from the source. What is left will be dropped on R3 and R4.</h4>
+                    </div>
+                  </div>
+                  <div id="complexcurrentR1">
+                      <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the current through R1 accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR1</var></p>
+                    <div class="hints">
+                      <h4>Remember Ohm's Law works for each individual item in the circuit. So the voltage drop on R1 is <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                    </div>
+                  </div>
+                  <div id="complexcurrentR2">
+                      <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the current through R2 accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR2</var></p>
+                    <div class="hints">
+                      <h4>Remember Ohm's Law works for each individual item in the circuit. So the voltage drop on R1 is <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                    </div>
+                  </div>
+                  <div id="complexcurrentR3">
+                      <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the current through R3 accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR3</var></p>
+                    <div class="hints">
+                      <h4>Remember Ohm's Law works for each individual item in the circuit. So the voltage drop on R1 is <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
+                    </div>
+                  </div>
+                  <div id="complexcurrentR4">
+                      <p class="problem"><img src="images/complexResistorsdcA.png" alt="Complex Resistors"></p>
+                      <p class="question">Given: R1 = <var>R1</var> ohms, R2 = <var>R2</var> ohms, R3 = <var>R3</var> ohms, R4 = <var>R4</var> ohms, and E1 = <var>E1</var> volts: <br><br> What is the current through R4 accurate to within .005 amps?</p>
+                      <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR4</var></p>
+                    <div class="hints">
+                      <h4>Remember Ohm's Law works for each individual item in the circuit. So the voltage drop on R1 is <br><br><code class="hint_blue">E\quad =\quad I\cdot R</code></h4>
                     </div>
                   </div>
               </div>
