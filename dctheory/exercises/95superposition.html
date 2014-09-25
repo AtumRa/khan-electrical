@@ -12,49 +12,49 @@
                   <var id="R1">(rand(39)+1)*25</var>
                   <var id="R2">(rand(39)+1)*25</var>
                   <var id="R3">(rand(39)+1)*25</var>
-                  <var id="Rt1" >(R1+(1/(1/R2+1/R3)))</var>
-                  <var id="Rt2" >(R2+(1/(1/R1+1/R3)))</var>
-                  <var id="IR1E1">(E1 / Rt1)</var>
-                  <var id="IR2E1">(IR1E1 * (1/(1/R2 + 1/R3))/R2)</var>
-                  <var id="IR3E1">(IR1E1 * (1/(1/R2 + 1/R3))/R3)</var>
-                  <var id="IR2E2">(E2 / Rt2)</var>
-                  <var id="IR1E2">(IR2E2 * (1/(1/R1 + 1/R3))/R1)</var>
-                  <var id="IR3E2">(IR2E2 * (1/(1/R1 + 1/R3))/R3)</var>
-                  <var id="IR1ta">(IR1E1 + IR1E2)</var>
-                  <var id="IR2ta">(IR2E1 + IR2E2)</var>
-                  <var id="IR3ta">(IR3E1 + IR3E2)</var>
-                  <var id="IR1to">Math.abs(IR1E1 - IR1E2)</var>
-                  <var id="IR2to">Math.abs(IR2E1 - IR2E2)</var>
-                  <var id="IR3to">Math.abs(IR3E1 - IR3E2)</var>
+                  <var id="Rt1" >(Math.round((R1+(1/(1/R2+1/R3)))*10000))/10000</var>
+                  <var id="Rt2" >(Math.round((R2+(1/(1/R1+1/R3)))*10000))/10000</var>
+                  <var id="IR1E1">(Math.round((E1 / Rt1)*10000))/10000</var>
+                  <var id="IR2E1">(Math.round((IR1E1 * (1/(1/R2 + 1/R3))/R2)*10000))/10000</var>
+                  <var id="IR3E1">(Math.round((IR1E1 * (1/(1/R2 + 1/R3))/R3)*10000))/10000</var>
+                  <var id="IR2E2">(Math.round((E2 / Rt2)*10000))/10000</var>
+                  <var id="IR1E2">(Math.round((IR2E2 * (1/(1/R1 + 1/R3))/R1)*10000))/10000</var>
+                  <var id="IR3E2">(Math.round((IR2E2 * (1/(1/R1 + 1/R3))/R3)*10000))/10000</var>
+                  <var id="IR1ta">(Math.round(Math.abs(IR1E1 - IR1E2)*10000))/10000</var>
+                  <var id="IR2ta">(Math.round(Math.abs(IR2E1 - IR2E2)*10000))/10000</var>
+                  <var id="IR3ta">(Math.round(Math.abs(IR3E1 + IR3E2)*10000))/10000</var>
+                  <var id="IR1to">(Math.round(Math.abs(IR1E1 + IR1E2)*10000))/10000</var>
+                  <var id="IR2to">(Math.round(Math.abs(IR2E1 + IR2E2)*10000))/10000</var>
+                  <var id="IR3to">(Math.round(Math.abs(IR3E1 - IR3E2)*10000))/10000</var>
               </div>
 
               <div class="problems">
                   <div id="superpositionAddR1">
                       <p class="problem"><img src="images/superpositionAdd.png" alt="Series Resistance"></p>
-                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R1 in this circuit accurate to within .005 amps?</p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R1 in this circuit accurate to within .005 amps? (All calculations have been rounded to 4 decimal places and answers are always positive.)</p>
                       <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR1ta</var></p>
                   </div>
                   <div id="superpositionAddR2">
                       <p class="problem"><img src="images/superpositionAdd.png" alt="Series Resistance"></p>
-                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R2 in this circuit accurate to within .005 amps?</p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R2 in this circuit accurate to within .005 amps? (All calculations have been rounded to 4 decimal places and answers are always positive.)</p>
                       <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR2ta</var></p>
                   </div>
                   <div id="superpositionAddR3">
                       <p class="problem"><img src="images/superpositionAdd.png" alt="Series Resistance"></p>
-                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R3 in this circuit accurate to within .005 amps?</p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R3 in this circuit accurate to within .005 amps? (All calculations have been rounded to 4 decimal places and answers are always positive.)</p>
                       <p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR3ta</var></p>
                   </div>
                   <div id="superpositionOppR1">
                       <p class="problem"><img src="images/superpositionOpp.png" alt="Series Resistance"></p>
-                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R1 in this circuit accurate to within .005 amps?<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR1to</var></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R1 in this circuit accurate to within .005 amps? (All calculations have been rounded to 4 decimal places and answers are always positive.)<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR1to</var></p>
                   </div>
                   <div id="superpositionOppR2">
                       <p class="problem"><img src="images/superpositionOpp.png" alt="Series Resistance"></p>
-                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R2 in this circuit accurate to within .005 amps?<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR2to</var></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R2 in this circuit accurate to within .005 amps? (All calculations have been rounded to 4 decimal places and answers are always positive.)<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR2to</var></p>
                   </div>
                   <div id="superpositionOppR3">
                       <p class="problem"><img src="images/superpositionOpp.png" alt="Series Resistance"></p>
-                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R3 in this circuit accurate to within .005 amps?<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR3to</var></p>
+                      <p class="question">Given: E1 = <var>E1</var> volts, E2 = <var>E2</var> volts, R1 = <var>R1</var> ohms, R2 = <var>R2</var> and R3 = <var>R3</var> ohms: <br><br> What is the current through R3 in this circuit accurate to within .005 amps? (All calculations have been rounded to 4 decimal places and answers are always positive.)<p class="solution" data-inexact data-max-error="0.005" data-type="decimal"><var>IR3to</var></p>
                   </div>
               </div>
 
