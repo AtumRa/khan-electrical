@@ -1,0 +1,39 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Parallel Current - RLC</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+                  <var id="E1">(rand(19)+1)*10</var>
+                  <var id="R1">(rand(39)+1)*25</var>
+                  <var id="L1">((rand(9)+1)*25)</var>
+                  <var id="C1">((rand(9)+1)*10)</var>
+                  <var id="F">(rand(39)+1)*25</var>
+                  <var id="IR1">E1/R1</var>
+                  <var id="XL1">(2*Math.PI*F*L1/1000)</var>
+                  <var id="IL1">E1/XL1</var>
+                  <var id="XC1">1/(2*Math.PI*F*C1/1000000)</var>
+                  <var id="IC1">E1/XC1</var>
+                  <var id="ILC">Math.pow(IL1-IC1, 2)</var>
+                  <var id="I">(sqrt((IR1*IR1) + ILC))</var>
+              </div>
+
+              <div class="problems">
+                  <div id="RLCinparallel">
+                      <p class="problem"><img src="images/parallelRLC.png" alt="Parallel RLC"></p>
+                      <p class="question">Given: The frequency of the AC supply = <var>F</var> Hertz, E1 = <var>E1</var> volts, R1 = <var>R1</var> ohms, L1 = <var>L1</var> milliHenries, and C1 = <var>C1</var> microFarads: <br><br> What is the total current in this circuit in amps?<br><br>Acceptable answers are accurate to .05 amps.</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-forms="decimal"><var>I</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+                  <p>You have to find the inductive and capcitive currents first.</p>
+                  <p>The total current is the Pythagorean sum of the resistive current and the reactive current.</p>
+                  <p><code class="hint_blue">I\quad =\quad \sqrt { { IR }^{ 2 }+{ IX }^{ 2 } }</code></p>
+              </div>
+          </div>
+      </body>
+  </html>

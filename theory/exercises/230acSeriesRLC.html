@@ -1,0 +1,35 @@
+  <!DOCTYPE html>
+  <html data-require="math graphie graphie-helpers-arithmetic word-problems">
+      <head>
+          <title>Series Impedance - RLC</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+                  <var id="R1">(rand(39)+1)*25</var>
+                  <var id="L1">((rand(9)+1)*25)</var>
+                  <var id="C1">((rand(9)+1)*10)</var>
+                  <var id="F">(rand(39)+1)*25</var>
+                  <var id="XL1">(2*Math.PI*F*L1/1000)</var>
+                  <var id="XC1">1/(2*Math.PI*F*C1/1000000)</var>
+                  <var id="LC">Math.pow(XL1-XC1, 2)</var>
+                  <var id="Z">(sqrt((R1*R1) + LC))</var>
+              </div>
+
+              <div class="problems">
+                  <div id="RLCinseries">
+                      <p class="problem"><img src="images/seriesRLC.png" alt="Series RLC"></p>
+                      <p class="question">Given: The frequency of the AC supply = <var>F</var> Hertz, R1 = <var>R1</var> ohms, L1 = <var>L1</var> milliHenries, and C1 = <var>C1</var> microFarads: <br><br> What is the total impedance of this circuit in ohms?<br><br>Acceptable answers are accurate to .05 ohms.</p>
+                      <p class="solution" data-inexact data-max-error="0.05" data-forms="decimal"><var>Z</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+                  <p>You have to find the inductive and capcitive reactances first.</p>
+                  <p>The total impedance is the Pythagorean sum of the resistance and the reactance.</p>
+                  <p><code class="hint_blue">Z\quad =\quad \sqrt { { R }^{ 2 }+{ X }^{ 2 } }</code></p>
+              </div>
+          </div>
+      </body>
+  </html>
